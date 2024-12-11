@@ -119,8 +119,8 @@ The main goals of this project are:
 - **Name:** Heart Disease Dataset  
 - **Size:** Approximately 200 KB  
 - **Format:** CSV  
-- **Rows:** 303  
-- **Columns:** 14  
+- **Rows:** 920  
+- **Columns:** 16
 
 ---
 
