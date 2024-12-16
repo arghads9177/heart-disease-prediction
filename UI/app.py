@@ -1,12 +1,25 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 import json
 import os
 import pickle
+import sys
+import subprocess
 
+try:
+    import matplotlib.pyplot as plt
+except ModuleNotFoundError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "matplotlib"])
+    import matplotlib.pyplot as plt
+
+try:
+    import seaborn as sns
+except ModuleNotFoundError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "seaborn"])
+    import seaborn as sns
 
 # Define the prediction function
 def predict_heart_disease(model, features):
