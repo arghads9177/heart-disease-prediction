@@ -1,25 +1,27 @@
 import streamlit as st
 import pandas as pd
 import pickle
-# import matplotlib.pyplot as plt
-# import seaborn as sns
+import matplotlib.pyplot as plt
+import seaborn as sns
 import json
 import os
 import pickle
 import sys
 import subprocess
 
-try:
-    import matplotlib.pyplot as plt
-except ModuleNotFoundError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "matplotlib"])
-    import matplotlib.pyplot as plt
+model_path = "./models"
+data_path = "./data"
+# try:
+#     import matplotlib.pyplot as plt
+# except ModuleNotFoundError:
+#     subprocess.check_call([sys.executable, "-m", "pip", "install", "matplotlib"])
+#     import matplotlib.pyplot as plt
 
-try:
-    import seaborn as sns
-except ModuleNotFoundError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "seaborn"])
-    import seaborn as sns
+# try:
+#     import seaborn as sns
+# except ModuleNotFoundError:
+#     subprocess.check_call([sys.executable, "-m", "pip", "install", "seaborn"])
+#     import seaborn as sns
 
 # Define the prediction function
 def predict_heart_disease(model, features):
@@ -69,8 +71,9 @@ def main():
     if choice == "Heart Disease Prediction":
         st.subheader("Heart Disease Prediction")
         try:
+            hdp_model = os.path.join(model_path, "model_xgb.pkl")
             # Load the optimized Prophet model
-            with open("../models/model_xgb.pkl", "rb") as f:
+            with open(hdp_model, "rb") as f:
                 model = pickle.load(f)
             
             st.write("Predict the stage of heart disease based on input features.")
@@ -136,7 +139,7 @@ def main():
     # Target Analysis
     elif choice == "Target Analysis":
         st.subheader("Target Analysis")
-        data_path = "../data"
+        # data_path = "../data"
         csv_path = os.path.join(data_path, "hd_uci_cleaned.csv")
         df = pd.read_csv(csv_path)
         # Check class imbalance
@@ -194,7 +197,7 @@ def main():
     # Demographic Analysis
     elif choice == "Demographic Analysis":
         st.subheader("Demographic Analysis")
-        data_path = "../data"
+        # data_path = "../data"
         csv_path = os.path.join(data_path, "hd_uci_cleaned.csv")
         df = pd.read_csv(csv_path)
         st.markdown("""
@@ -306,7 +309,7 @@ def main():
     # Clinical Analysis
     elif choice == "Clinical Analysis":
         st.subheader("Clinical Analysis")
-        data_path = "../data"
+        # data_path = "../data"
         csv_path = os.path.join(data_path, "hd_uci_cleaned.csv")
         df = pd.read_csv(csv_path)
         st.markdown("""
