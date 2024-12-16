@@ -9,8 +9,8 @@ import pickle
 import sys
 import subprocess
 
-model_path = "./models"
-data_path = "./data"
+model_path = "../models"
+data_path = "../data"
 # try:
 #     import matplotlib.pyplot as plt
 # except ModuleNotFoundError:

@@ -127,3 +127,11 @@ The main goals of this project are:
 ## Conclusion  
 
 This project demonstrates the use of machine learning and data analysis techniques to predict heart disease stages. By leveraging patient data, it provides actionable insights for early diagnosis and effective management of heart disease.  
+
+## Installation Guide
+
+1. Intall python 3.11 in your system.
+2. Open your Command Prompt or Terminal
+3. Create the virtual environment `python3 -m venv venv`
+4. Install necessary packages `pip install -r UI\requirements.txt`
+5. Run the Application `streamlit run UI\app.py`
