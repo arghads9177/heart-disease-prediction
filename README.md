@@ -130,8 +130,11 @@ This project demonstrates the use of machine learning and data analysis techniqu
 
 ## Installation Guide
 
-1. Intall python 3.11 in your system.
-2. Open your Command Prompt or Terminal
-3. Create the virtual environment `python3 -m venv venv`
-4. Install necessary packages `pip install -r UI\requirements.txt`
-5. Run the Application `streamlit run UI\app.py`
+1. Intall python 3.11 in your system. from the following link https://www.python.org/downloads/
+2. Install miniconda from the following link https://www.anaconda.com/download/success#miniconda
+3. Open your Command Prompt or Terminal
+4. Create the virtual environment `conda create -p venv`
+5. Activate the virtual environment `conda activate venv\`
+6. Install necessary packages `pip install -r UI\requirements.txt`
+7. Move to the UI `cd UI`
+7. Run the Application `streamlit run app.py`
